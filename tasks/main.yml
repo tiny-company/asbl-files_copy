@@ -4,9 +4,13 @@
 
 - name : make sure that destination path exist
   ansible.builtin.file:
-    path: /etc/some_directory
+    path: "{{ item.file_remote_path | dirname }}"
+    dest: "{{ item.file_remote_path }}"
+    owner: "{{ item.file_user_own }}"
+    group: "{{ item.file_group_own }}"
     state: directory
     mode: '0755'
+  loop: "{{ copy_files_list }}"
 
 - name: copy files from remote to dest
   ansible.builtin.copy:

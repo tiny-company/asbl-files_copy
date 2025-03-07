@@ -8,7 +8,7 @@
 root_user: root
 
 ## user to run this playbook
-files_copy_user: admin
+files_copy_user: root
 
 ## ==================
 ## copy files path

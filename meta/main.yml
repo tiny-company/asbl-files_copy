@@ -1,0 +1,7 @@
+galaxy_info:
+  role_name: files_copy
+  author: draed
+  description: This repo contain the ansible role that copy files from local source to destination
+  company: tiny company
+  license: license GPL-3.0-only
+  min_ansible_version: 2.14.1

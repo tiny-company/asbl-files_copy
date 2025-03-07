@@ -1,0 +1,29 @@
+---
+
+###################################################
+## asbl-files_copy role vars
+###################################################
+
+## root username (default is root)
+root_user: root
+
+## user to run this playbook
+files_copy_user: admin
+
+## ==================
+## copy files path
+## change this path to where you are storing locals files (default to role 'files' folder)
+files_copy_default_path: "{{ role_path }}/files"
+
+
+## ==================
+## copy files list
+## list of dict for files to copy from remote to dest
+copy_files_list:
+  - file_local_path: "{{ files_copy_default_path }}/copy_file_example.txt"
+    file_remote_path: "/opt/copy_file_example.txt"
+    file_user_own: "root"
+    file_group_own: "root"
+    file_rights: '0644'
+    file_backup: true
+

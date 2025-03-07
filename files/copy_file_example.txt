@@ -1,0 +1,1 @@
+simple text file to test copy_file ansible role

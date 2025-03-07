@@ -1,0 +1,20 @@
+---
+# Description : copy multiples file from local to remote
+# file : main.yml
+
+- name : make sure that destination path exist
+  ansible.builtin.file:
+    path: /etc/some_directory
+    state: directory
+    mode: '0755'
+
+- name: copy files from remote to dest
+  ansible.builtin.copy:
+    src: "{{ item.file_local_path }}"
+    dest: "{{ item.file_remote_path }}"
+    owner: "{{ item.file_user_own }}"
+    group: "{{ item.file_group_own }}"
+    mode: "{{ item.file_rights }}"
+    backup: "{{ item.file_backup | default(true) }}"
+  loop: "{{ copy_files_list }}"
+

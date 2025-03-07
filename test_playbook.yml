@@ -1,0 +1,9 @@
+---
+
+- name: Copy files from local source to destination
+  hosts: all
+  roles:
+    - role: files_copy
+      become: true
+      become_user: "{{ files_copy_user }}"
+      tags: [files_copy]

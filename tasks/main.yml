@@ -20,5 +20,6 @@
     group: "{{ item.file_group_own }}"
     mode: "{{ item.file_rights }}"
     backup: "{{ item.file_backup | default(true) }}"
+    force: "{{ item.file_force | default(false) }}"
   loop: "{{ copy_files_list }}"
 

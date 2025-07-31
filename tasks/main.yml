@@ -5,7 +5,6 @@
 - name : make sure that destination path exist
   ansible.builtin.file:
     path: "{{ item.file_remote_path | dirname }}"
-    dest: "{{ item.file_remote_path }}"
     owner: "{{ item.file_user_own }}"
     group: "{{ item.file_group_own }}"
     state: directory
